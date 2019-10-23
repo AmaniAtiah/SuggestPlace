@@ -26,15 +26,18 @@
         android:id="@+id/image_place"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:layout_weight="1"
+
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_name"
-
         app:srcCompat="@drawable/park" />
 
     <Button
@@ -43,36 +46,32 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:background="@drawable/button"
+        android:layout_marginBottom="16dp"
 
+        android:background="@drawable/button"
         android:onClick="displayRandomPlace"
         android:text="اقترح"
         android:textColor="@android:color/white"
         android:textSize="18sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/next"
-        app:layout_constraintStart_toEndOf="@+id/prev"
-        app:layout_constraintTop_toBottomOf="@+id/image_place" />
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        app:layout_constraintStart_toEndOf="@+id/prev" />
 
     <ImageButton
         android:id="@+id/next"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
 
         android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/circle"
         android:onClick="next"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_place"
         app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
     <ImageButton
@@ -82,11 +81,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
 
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/circle"
         android:onClick="prev"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_place"
         app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
