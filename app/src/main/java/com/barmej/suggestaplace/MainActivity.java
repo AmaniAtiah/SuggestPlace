@@ -94,14 +94,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt(BUNDLE_CURRENT_INDEX,mCurrentIndex);
-        Log.i(TAG,"onSaveInstanceState");
-
-    }
-
-    @Override
     protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         if (savedInstanceState != null) {
@@ -113,5 +105,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         Log.i(TAG, "onRestoreInstanceInstanceState");
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(BUNDLE_CURRENT_INDEX,mCurrentIndex);
+        Log.i(TAG,"onSaveInstanceState");
+
     }
 }
