@@ -19,13 +19,11 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
-    ImageView placeImageView;
-    TextView textName;
     private static final String TAG = MainActivity.class.getSimpleName();
     private static final String BUNDLE_CURRENT_INDEX = "BUNDLE_CURRENT_INDEX";
+    ImageView placeImageView;
+    TextView textName;
     private Random mRandom;
-
-
 
     int mPlacePictures [] = {
             R.drawable.beach,
@@ -39,14 +37,19 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.walking,
     };
 
-
-    String mPlaceName [] ={
-            "شاطئ","دراجة","كرة قدم","متحف","مطعم","الجري","السوق","السباحة","المشي"
+    private int mPlaceName [] = {
+            R.string.beach,
+            R.string.bicycle,
+            R.string.football,
+            R.string.museum,
+            R.string.resturant,
+            R.string.running,
+            R.string.shop,
+            R.string.swimming,
+            R.string.walking,
     };
 
     int mCurrentIndex = -1;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,39 +57,39 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         placeImageView = findViewById(R.id.image_place);
         textName = findViewById(R.id.text_name);
+        Log.i(TAG,"Created");
         mRandom = new Random();
-
     }
-
-    public void display(View view) {
+    public void displayRandomPlace(View view) {
         if(mCurrentIndex < 9) {
             Log.d(TAG, "display =" + mCurrentIndex);
             mCurrentIndex = mRandom.nextInt(9);
-            showImage();
+            showImageAndTitle();
+        }else {
+            mCurrentIndex = -1;
         }
     }
-    private void showImage() {
+    private void showImageAndTitle() {
         Drawable placeDrawable = ContextCompat.getDrawable(this,mPlacePictures[mCurrentIndex]);
         placeImageView.setImageDrawable(placeDrawable);
         textName.setText(mPlaceName[mCurrentIndex]);
-
-
-
     }
-
 
     public void next(View view) {
         if(mCurrentIndex < 8) {
             mCurrentIndex++;
-            showImage();
+            showImageAndTitle();
+        }else {
+            Toast.makeText(this,"ليس هناك المزيد من الاماكن لعرضها",Toast.LENGTH_SHORT).show();
         }
     }
 
     public void prev(View view) {
         if(mCurrentIndex > 0) {
             mCurrentIndex--;
-            showImage();
-
+            showImageAndTitle();
+        }else {
+            Toast.makeText(this,"ليس هناك المزيد من الاماكن لعرضها",Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -106,54 +109,9 @@ public class MainActivity extends AppCompatActivity {
             mCurrentIndex = savedInstanceState.getInt(BUNDLE_CURRENT_INDEX);
             if (mCurrentIndex != -1) {
                 Log.d(TAG, "display =" + mCurrentIndex);
-                showImage();
+                showImageAndTitle();
             }
         }
         Log.i(TAG, "onRestoreInstanceInstanceState");
-    }
-
-
-
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        Log.i(TAG,"Restarted");
-
-    }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        Log.i(TAG,"Started");
-
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.i(TAG,"Resumed");
-
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        Log.i(TAG,"Paused");
-
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        Log.i(TAG,"Stopped");
-
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        Log.i(TAG,"Destroyed");
-
     }
 }

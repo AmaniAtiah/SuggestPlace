@@ -48,7 +48,7 @@
         android:layout_marginRight="16dp"
         android:background="@drawable/button"
 
-        android:onClick="display"
+        android:onClick="displayRandomPlace"
         android:text="اقترح"
         android:textColor="@android:color/white"
         android:textSize="18sp"

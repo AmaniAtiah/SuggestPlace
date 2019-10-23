@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Suggest a place</string>
+    <string name="app_name">Suggest a place or activity</string>
+    <string name="beach">شاطئ</string>
+    <string name="bicycle">دراجة</string>
+    <string name="football">كرة قدم</string>
+    <string name="museum">متحف</string>
+    <string name="resturant">مطعم</string>
+    <string name="running">الجري</string>
+    <string name="shop">السوق</string>
+    <string name="swimming">السباحة</string>
+    <string name="walking">المشي</string>
 </resources>
