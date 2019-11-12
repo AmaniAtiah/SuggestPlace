@@ -9,4 +9,7 @@
     <string name="shop">السوق</string>
     <string name="swimming">السباحة</string>
     <string name="walking">المشي</string>
+    <string name="next">ليس هناك المزيد من الاماكن لعرضها</string>
+    <string name="prev">ليس هناك المزيد من الاماكن لعرضها</string>
+
 </resources>
