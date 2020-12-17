@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             mCurrentIndex++;
             showImageAndTitle();
         }else {
-            Toast.makeText(this, R.string.next, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_places_to_display, Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
             mCurrentIndex--;
             showImageAndTitle();
         }else {
-            Toast.makeText(this, R.string.prev, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.no_places_to_display, Toast.LENGTH_SHORT).show();
         }
     }
 
