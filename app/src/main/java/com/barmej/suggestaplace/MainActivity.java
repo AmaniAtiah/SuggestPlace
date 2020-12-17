@@ -111,8 +111,6 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
         outState.putInt(BUNDLE_CURRENT_INDEX,mCurrentIndex);
         Log.i(TAG,"onSaveInstanceState");
-        Log.i(TAG,"onSaveInstanceState");
-
 
     }
 }
